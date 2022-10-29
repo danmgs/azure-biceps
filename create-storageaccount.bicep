@@ -2,9 +2,12 @@
 // https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep
 // https://learn.microsoft.com/fr-fr/azure/azure-resource-manager/bicep/bicep-config-linter
 // https://learn.microsoft.com/fr-fr/azure/azure-resource-manager/bicep/quickstart-create-bicep-use-visual-studio-code?tabs=CLI#prerequisites
-// https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-internal-bicep?tabs=CLI
 // https://learn.microsoft.com/fr-fr/azure/azure-resource-manager/bicep/add-template-to-azure-pipelines?tabs=CLI
 
+// 2 VMs in VNET - Internal Load Balancer and LB rules
+// https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-internal-bicep?tabs=CLI
+// https://azure.microsoft.com/fr-fr/resources/templates/2-vms-internal-load-balancer/
+// https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/2-vms-internal-load-balancer
 
 @minLength(3)
 @maxLength(24)
@@ -12,6 +15,7 @@
 param storageName string
 
 // https://azuretracks.com/2021/04/current-azure-region-names-reference/
+// parameter with a default value
 param locationCode string = 'northeurope'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
